@@ -1,13 +1,10 @@
 package com.example.demo;
 
-import com.example.demo.model.TrainModel;
 import com.example.demo.repository.TrainRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-
-import java.util.stream.Stream;
 
 @SpringBootApplication
 public class DemoApplication {
@@ -23,7 +20,7 @@ public class DemoApplication {
 //                TrainModel train = new TrainModel(name, name.toLowerCase() + "@domain.com");
 //                userRepository.save(train);
 //            });
-            TrainRepository.findAll().forEach(System.out::println);
+            trainRepository.findAll().forEach(System.out::println);
         };
     }
 
