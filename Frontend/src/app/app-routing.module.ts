@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { TrainListComponent } from './train-list/train-list.component';
+import { TrainListComponent } from './module/train-list/train-list.component';
 
 const routes: Routes = [
     { path: 'train', component: TrainListComponent }

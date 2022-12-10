@@ -10,7 +10,8 @@ export class MainComponent {
 
     constructor() {}
 
-    // submit(from: String, to: String, date: Date): void {
+    submit(from: String, to: String, date: Date): void {
+        console.log(from, to, date)
 
         // if (this.appointmentForm.invalid) {
         //     this.tryingToSubmit = true;

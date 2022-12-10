@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Train } from '../model/train';
-import { Observable } from 'rxjs/Observable';
+import type { Observable } from 'rxjs';
 
 @Injectable()
 export class TrainService {
