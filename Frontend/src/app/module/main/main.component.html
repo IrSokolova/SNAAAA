@@ -6,16 +6,18 @@
     <link rel="stylesheet" href="main.component.css">
 </head>
 <body>
-    <div class="menu-area">
-        <h1>
-            Railway Management System
-        </h1>
-        <div class="nav" style="text-align: justify">
-            <input type="text" name="Start" id="start" placeholder="Start">
-            <input type="text" name="Start" id="dest" placeholder="Destination">
-            <input type="date" name="Start" id="date">
-            <button name="find">Find Route</button>
-        <div>
+    <div style="margin-left: 150px; margin-right: 150px">
+        <div class="menu-area">
+            <h1>
+                Railway Management System
+            </h1>
+            <div class="nav" style="text-align: justify">
+                <input type="text" name="Start" id="startP" placeholder="Start">
+                <input type="text" name="Start" id="dest" placeholder="Destination">
+                <input type="date" name="Start" id="date">
+                <a routerLink="/train"><button onclick="submit(startP, dest, date)" name="find">FIND ROUTE</button></a>
+            <div>
+        </div>
     </div>
 </body>
 </html>

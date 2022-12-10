@@ -1,0 +1,40 @@
+<p-toast position="center" [modal]="true" [baseZIndex]="5000">
+    <ng-template let-message pTemplate="success">
+        <div style="text-align: center">
+            <i class="pi pi-heart" style="font-size: 3em"></i>
+        </div>
+    </ng-template>
+</p-toast>
+
+<p-table
+        #dt
+        styleClass="p-datatable-responsive-demo"
+        [scrollable]="true"
+        [columns]="cols"
+        [value]="trains"
+        [style]="{ width: 'auto' }"
+        scrollHeight="auto"
+>
+    <ng-template pTemplate="colgroup" let-columns>
+        <colgroup>
+            <col *ngFor="let col of columns.slice(0, columns.length)" style="width:300px">
+<!--            <col *ngFor="let col of columns.slice(columns.length-1)" style="width: 100px">-->
+        </colgroup>
+    </ng-template>
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor="let col of columns.slice(0, columns.length)" [pSortableColumn]="col.field">
+                {{col.header}}
+                <p-sortIcon [field]="col.field"></p-sortIcon>
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-train>
+        <tr>
+            <td> {{train.departureTime}} </td>
+            <td> {{train.arrivalTime}} </td>
+            <td> {{train.travelTime}} </td>
+            <td> {{train.trainNumber}} </td>
+        </tr>
+    </ng-template>
+</p-table>
