@@ -17,6 +17,6 @@ public interface TrainRepository extends CrudRepository<TrainModel, Long> {
     public List<TrainModel> findByDestinationStationName(@Param("destinationStationName") String destinationStationName);
 
     @Query("FROM TrainModel")
-    public static List<TrainModel> findAll();
+    public List<TrainModel> findAll();
 
 }
