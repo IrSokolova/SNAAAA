@@ -1,0 +1,46 @@
+h1 {
+  text-align: center;
+  margin: 0;
+  color: #160F07;
+  font-family: 'Roboto Flex', sans-serif;
+  font-size: xxx-large;
+}
+body {
+  margin: 0;
+}
+
+.menu-area {
+  background: linear-gradient(#FFD9AB, #FFF);
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+.nav {
+  background: url("../../../../trains.png") center no-repeat;
+  background-size: 100% auto;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.nav input {
+  opacity: 100%;
+  padding: 20px;
+  width: 270px;
+  margin-left: 12px;
+  margin-right: 35px;
+  margin-bottom: 70px;
+  font-size: large;
+}
+
+.nav button {
+  opacity: 100%;
+  padding: 20px;
+  width: 310px;
+  margin-left: 12px;
+  margin-right: 10px;
+  margin-bottom: 70px;
+  font-size: large;
+  background-color: #FFF;
+}
