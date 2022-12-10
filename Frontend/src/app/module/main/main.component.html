@@ -12,13 +12,13 @@
                 Railway Management System
             </h1>
             <div class="nav" style="text-align: justify">
-                <input type="text" name="Start" id="startP" placeholder="Start">
-                <input type="text" name="Start" id="dest" placeholder="Destination">
-                <input type="date" name="Start" id="date">
+                <input type="text" name="Start" id="startPoint" placeholder="Start">
+                <input type="text" name="Start" id="destPoint" placeholder="Destination">
+                <input type="date" name="Start" id="startDate">
                 <button pButton
                         label="Submit"
                         type="submit"
-                        (click)="submitName(nameForm)"
+                        (click)="submitForm()"
                         class="ui-button-info"
                 ></button>
 <!--                <a routerLink="/train"><button onclick="submit(startP, dest, date)" name="find">FIND ROUTE</button></a>-->
