@@ -15,8 +15,14 @@
                 <input type="text" name="Start" id="startP" placeholder="Start">
                 <input type="text" name="Start" id="dest" placeholder="Destination">
                 <input type="date" name="Start" id="date">
-                <a routerLink="/train"><button onclick="submit(startP, dest, date)" name="find">FIND ROUTE</button></a>
-            <div>
+                <button pButton
+                        label="Submit"
+                        type="submit"
+                        (click)="submitName(nameForm)"
+                        class="ui-button-info"
+                ></button>
+<!--                <a routerLink="/train"><button onclick="submit(startP, dest, date)" name="find">FIND ROUTE</button></a>-->
+            </div>
         </div>
     </div>
 </body>
