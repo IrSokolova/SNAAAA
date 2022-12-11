@@ -12,18 +12,50 @@ services:
       POSTGRES_PASSWORD: trains_pass
       POSTGRES_INITDB_ARGS: "-E=UTF8 --lc-collate=C --lc-ctype=C"
 
-  trains-application:
-    environment:
-      - PSQL_DB_URL=jdbc:postgresql://postgresql-database:5432/trains
+  # trains-application:
+  #   environment:
+  #     - PSQL_DB_URL=jdbc:postgresql://postgresql-database:5432/trains
+  #   build:
+  #     context: Backend
+  #   ports:
+  #     - '8080:8080'
+  #   networks:
+  #     - trains-network
+  #   depends_on:
+  #     - postgresql-database
+
+  # trains-frontend:
+  #   build:
+  #     context: Frontend
+  #   networks:
+  #     - trains-network
+
+  # gateway:
+  #   build:
+  #     context: ./gateway
+  #   ports:
+  #     - 80:80
+  #   networks:
+  #     - trains-network
+  #   depends_on:
+  #     - trains-frontend
+  #     - trains-application
+
+  backuper:
     build:
-      context: Backend
-    ports:
-      - '8080:8080'
+      context: ./backuper
     networks:
       - trains-network
+    environment:
+      POSTGRES_DB: trains
+      POSTGRES_USER: trains
+      POSTGRES_PASSWORD: trains_pass
+      POSTGRES_INITDB_ARGS: "-E=UTF8 --lc-collate=C --lc-ctype=C"
+      PGDATABASE: trains
+      PGHOST: postgresql-database
+      PGPASSWORD: trains_pass
     depends_on:
       - postgresql-database
-
 
 networks:
   trains-network:
