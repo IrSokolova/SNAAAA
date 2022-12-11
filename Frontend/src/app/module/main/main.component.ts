@@ -22,11 +22,11 @@ export class MainComponent {
 
     cols = [
         { field: 'departureStationName', header: 'From'},
-        { field: 'departureAt', header: 'Departure' },
+        { field: 'departureAt', header: 'Departure Time' },
         { field: 'destinationStationName', header: 'To'},
-        { field: 'arrivalAt', header: 'Arrival' },
+        { field: 'arrivalAt', header: 'Arrival Time' },
         { field: 'distance', header: 'Distance' },
-        { field: 'trainNumber', header: 'Train' },
+        { field: 'trainNumber', header: 'Train Number' },
     ];
 
     // [{"trainNumber":13,"departureStationName":"KAZAN","destinationStationName":"MOSCOW","departureAt":"2022-12-14T20:59:38.198Z","arrivalAt":"2022-12-14T20:56:35.441Z","distance":23.00}]
@@ -37,7 +37,7 @@ export class MainComponent {
         let date = document.getElementById("startDate").value;
         // console.log(from, to, date)
 
-        let options = { hour: '2-digit', minute: '2-digit' };
+        let options = { day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' };
         // let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
         // date = Intl.DateTimeFormat("en", options).format(date)
 
@@ -58,7 +58,7 @@ export class MainComponent {
             this.trains = response;
 
             this.trains.forEach((value) => {
-                console.log(typeof(value.departureAt))
+                console.log(value.trainNumber)
                 let time1 = Date.parse(value.departureAt)
                 let time2 = Date.parse(value.arrivalAt)
                 value.departureAt = Intl.DateTimeFormat("en", options).format(time1)
