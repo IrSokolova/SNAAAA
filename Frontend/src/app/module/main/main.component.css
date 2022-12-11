@@ -26,12 +26,12 @@ body {
 
 .nav input {
   opacity: 100%;
-  padding: 20px;
-  width: 270px;
-  margin-left: 12px;
-  margin-right: 35px;
+  padding: 10px;
+  width: 310px;
+  margin-left: 15px;
+  margin-right: 40px;
   margin-bottom: 70px;
-  font-size: large;
+  font-size: medium;
 }
 
 .nav button {
@@ -41,6 +41,6 @@ body {
   margin-left: 12px;
   margin-right: 10px;
   margin-bottom: 70px;
-  font-size: large;
+  font-size: medium;
   background-color: #FFF;
 }

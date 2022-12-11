@@ -10,10 +10,10 @@ export class TrainService {
     private trainUrl: string;
 
     constructor(private http: HttpClient) {
-        this.trainUrl = 'http://localhost:8080/train';
+        this.trainUrl = 'http://localhost:8080/trains/search';
     }
 
-    public findAll(request: FindTrainRequest): Observable<Train[]> {
-        return this.http.get<Train[]>(this.trainUrl);
+    public findTrains(request: FindTrainRequest): Observable<Train[]> {
+        return this.http.put<Train[]>(this.trainUrl, request);
     }
 }

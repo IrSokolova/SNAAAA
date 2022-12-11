@@ -20,9 +20,45 @@
                         type="submit"
                         (click)="submitForm()"
                         class="ui-button-info"
-                ></button>
+                >FIND ROUTE</button>
 <!--                <a routerLink="/train"><button onclick="submit(startP, dest, date)" name="find">FIND ROUTE</button></a>-->
             </div>
+        </div>
+        <div *ngIf="display">
+            <p-table
+                #dt
+                styleClass="p-datatable-responsive-demo"
+                [scrollable]="true"
+                [columns]="cols"
+                [value]="trains"
+                [style]="{ width: 'auto' }"
+                scrollHeight="auto"
+            >
+                <ng-template pTemplate="colgroup" let-columns>
+                    <colgroup>
+                        <col *ngFor="let col of columns" style="width:200px">
+                        <!--            <col *ngFor="let col of columns.slice(columns.length-1)" style="width: 100px">-->
+                    </colgroup>
+                </ng-template>
+                <ng-template pTemplate="header" let-columns>
+                    <tr>
+                        <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                            {{col.header}}
+                            <p-sortIcon [field]="col.field"></p-sortIcon>
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-train>
+                    <tr>
+                        <td> {{train.departureStationName}} </td>
+                        <td> {{train.departureAt}} </td>
+                        <td> {{train.destinationStationName}} </td>
+                        <td> {{train.arrivalAt}} </td>
+                        <td> {{train.distance}} </td>
+                        <td> {{train.trainNumber}} </td>
+                    </tr>
+                </ng-template>
+            </p-table>
         </div>
     </div>
 </body>

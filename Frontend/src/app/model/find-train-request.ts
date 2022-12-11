@@ -1,5 +1,5 @@
 export interface FindTrainRequest {
-    departure: string;
-    arrival: string;
-    depDate: Date;
+    fromStationName: string;
+    toStationName: string;
+    departureAt: Date;
 }

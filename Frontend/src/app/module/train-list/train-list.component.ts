@@ -23,12 +23,13 @@ export class TrainListComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.trainService.findAll().subscribe((response: Train[]) => {
-            this.trains = response;
 
-            this.trains.forEach((value) => {
-                this.trainsDataToOutput.push({...value});
-            });
-        });
+        // this.trainService.findTrains().subscribe((response: Train[]) => {
+        //     this.trains = response;
+        //
+        //     this.trains.forEach((value) => {
+        //         this.trainsDataToOutput.push({...value});
+        //     });
+        // });
     }
 }

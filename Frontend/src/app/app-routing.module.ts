@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { TrainListComponent } from './module/train-list/train-list.component';
 
 const routes: Routes = [
-    { path: 'train', component: TrainListComponent }
+    { path: 'trains/search', component: TrainListComponent }
 ];
 
 @NgModule({
