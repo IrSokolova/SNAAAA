@@ -16,7 +16,8 @@ body {
 }
 
 .nav {
-  background: url("../../../../trains.png") center no-repeat;
+  background-color: #7F83B1;
+  /*background: url("../../../../trains.png") center no-repeat;*/
   background-size: 100% auto;
   padding-top: 100px;
   padding-bottom: 50px;
